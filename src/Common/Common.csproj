@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MediatR" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" />
+    </ItemGroup>
+
 </Project>

@@ -11,9 +11,7 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
-        
-        // Add application layers / dependencies
-        
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

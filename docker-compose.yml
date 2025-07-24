@@ -7,19 +7,22 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:800"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=Host=db;Database=TicketHub;Username=ticketadmin;Password=ticketpassword
     depends_on:
       - db
       
   db:
     image: postgres:16
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypass
-      POSTGRES_DB: mydb
+      POSTGRES_USER: ticketadmin
+      POSTGRES_PASSWORD: ticketpassword
+      POSTGRES_DB: TicketHub
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
         
 volumes:
-  pgdata:
+  db_data:

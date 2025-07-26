@@ -6,9 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5000:800"
+      - "8000:5000"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
       - ConnectionStrings__Default=Host=db;Database=TicketHub;Username=ticketadmin;Password=ticketpassword
     depends_on:
       - db

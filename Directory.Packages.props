@@ -11,9 +11,9 @@
         <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0" />
         <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
         <PackageVersion Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.1" />
         <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-        <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+        <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
         <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
         <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
         <!-- External Packages -->
@@ -50,5 +50,8 @@
         <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.12.1"/>
         <PackageVersion Include="Microsoft.AspNetCore.Authentication" Version="2.3.0"/>
         <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.7"/>
+        <!-- Logging -->
+        <PackageVersion Include="Serilog" Version="4.3.0" />
+        <PackageVersion Include="Serilog.Sinks.Seq" Version="9.0.0" />
     </ItemGroup>
 </Project>

@@ -9,6 +9,13 @@
     <ItemGroup>
       <PackageReference Include="MudBlazor" />
       <PackageReference Include="MudBlazor.ThemeManager" />
+      <PackageReference Include="Serilog" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\Common\Common.csproj" />
+      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

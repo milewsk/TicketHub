@@ -1,4 +1,5 @@
 using Application;
+
 using Infrastructure;
 
 namespace Presentation;
@@ -10,7 +11,9 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddInfrastructure(builder.Configuration)
+        builder.Services
+            .AddApplication()
+            .AddInfrastructure(builder.Configuration)
             .AddPresentationLayer(builder.Configuration);
 
         var app = builder.Build();

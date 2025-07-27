@@ -8,14 +8,15 @@
     </PropertyGroup>
     <ItemGroup>
         <!-- ASP.NET -->
-        <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0" />
-        <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
-        <PackageVersion Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.1" />
-        <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-        <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
-        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
-        <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Mvc" Version="2.2.0"/>
+        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.1"/>
+        <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0"/>
+        <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7"/>
+        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
+        <PackageVersion Include="Serilog.AspNetCore" Version="9.0.0"/>
+        <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
         <!-- External Packages -->
         <PackageVersion Include="MediatR" Version="12.5.0"/>
         <PackageVersion Include="FluentValidation" Version="12.0.0"/>
@@ -23,7 +24,7 @@
         <PackageVersion Include="MudBlazor" Version="8.10.0"/>
         <PackageVersion Include="MudBlazor.ThemeManager" Version="3.0.0"/>
         <!-- Analyzers -->
-        <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.556" />
+        <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.556"/>
         <!-- EF Core -->
         <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.7"/>
         <PackageVersion Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.7"/>
@@ -51,7 +52,12 @@
         <PackageVersion Include="Microsoft.AspNetCore.Authentication" Version="2.3.0"/>
         <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.7"/>
         <!-- Logging -->
-        <PackageVersion Include="Serilog" Version="4.3.0" />
-        <PackageVersion Include="Serilog.Sinks.Seq" Version="9.0.0" />
+        <PackageVersion Include="Serilog" Version="4.3.0"/>
+        <PackageVersion Include="Serilog.AspNetCore" Version="9.0.0"/>
+        <PackageVersion Include="Serilog.Sinks.Seq" Version="9.0.0"/>
+        <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0"/>
+        <PackageReference Include="Serilog.Sinks.PostgreSQL" Version="2.3.0"/>
+        <PackageReference Include="Serilog.Sinks.Async" Version="2.1.0"/>
+        
     </ItemGroup>
 </Project>

@@ -1,64 +1,42 @@
-using MudBlazor;
-using MudBlazor.Services;
-using Presentation.Components;
+using Presentation.Middlewares;
 
 namespace Presentation;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddPresentationLayer(
+    public static IServiceCollection AddPresentation(
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddRazorComponents().AddInteractiveServerComponents();
-
-        services.AddMudBlazorServices(configuration);
-
         return services;
     }
 
-    public static WebApplication ConfigureServer(
-        this WebApplication app,
+    public static WebApplication ConfigureApplication(this WebApplication app,
         IConfiguration configuration)
     {
-        if (!app.Environment.IsDevelopment())
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
         {
-            app.UseExceptionHandler("/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
+            app.MapOpenApi();
         }
 
         app.UseHttpsRedirection();
 
-        app.UseAntiforgery();
+        app.UseAuthorization();
 
-        app.MapStaticAssets();
-        app.MapRazorComponents<App>()
-            .AddInteractiveServerRenderMode();
+        // Add request middlewares
+        AddMiddlewares(app);
+
+        app.MapControllers();
 
         return app;
     }
 
-    private static IServiceCollection AddMudBlazorServices(
-        this IServiceCollection services,
-        IConfiguration configuration)
+
+    private static WebApplication AddMiddlewares(this WebApplication app)
     {
-        services.AddMudServices(config =>
-        {
-            MudGlobal.InputDefaults.ShrinkLabel = true;
-            config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomCenter;
-            config.SnackbarConfiguration.NewestOnTop = false;
-            config.SnackbarConfiguration.ShowCloseIcon = true;
-            config.SnackbarConfiguration.VisibleStateDuration = 3000;
-            config.SnackbarConfiguration.HideTransitionDuration = 500;
-            config.SnackbarConfiguration.ShowTransitionDuration = 500;
-            config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
-        });
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
 
-        services.AddMudPopoverService();
-        services.AddMudBlazorSnackbar();
-        services.AddMudBlazorDialog();
-
-        return services;
+        return app;
     }
 }

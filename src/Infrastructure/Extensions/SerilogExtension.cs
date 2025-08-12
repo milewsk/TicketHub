@@ -95,11 +95,15 @@ public static class SerilogExtension
                 { "properties", new PropertiesColumnWriter(NpgsqlDbType.Varchar) },
                 { "log_event", new LogEventSerializedColumnWriter(NpgsqlDbType.Varchar) },
                 {
-                    "user_name", new SinglePropertyColumnWriter("UserName", PropertyWriteMethod.Raw,
+                    "user_name", new SinglePropertyColumnWriter(
+                        "UserName",
+                        PropertyWriteMethod.Raw,
                         NpgsqlDbType.Varchar)
                 },
                 {
-                    "client_ip", new SinglePropertyColumnWriter("ClientIP", PropertyWriteMethod.Raw,
+                    "client_ip", new SinglePropertyColumnWriter(
+                        "ClientIP",
+                        PropertyWriteMethod.Raw,
                         NpgsqlDbType.Varchar)
                 },
                 {
